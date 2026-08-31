@@ -58,6 +58,7 @@ jobs:
           # por linha, caso um dia precise valer para outro pleito.
           DIAS_TRAVADOS: |
             2026-10-04
+            2026-08-31
           DESTRAVAR: ${{ github.event.inputs.destravar }}
         run: |
           # America/Sao_Paulo, não UTC: o runner roda em UTC, e o dia da eleição
