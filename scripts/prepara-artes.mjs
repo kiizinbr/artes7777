@@ -153,6 +153,19 @@ for (const f of orfaos) {
 }
 
 /* --- os cards do index.html ------------------------------------------------
+   O card é a arte e o botão, nada mais — decisão do Erick em 31/08/2026: quem
+   olha um papel de parede decide pela imagem, não pela legenda.
+
+   O título e a descrição continuam vivos no `manifesto.json` e fazem trabalho
+   invisível: o `alt` descreve a arte para quem não a enxerga, e o `aria-label`
+   do botão diz QUAL papel de parede ele baixa — três botões "Baixar" idênticos
+   numa página são ambíguos num leitor de tela.
+
+   O link "Abrir imagem" saiu junto porque era redundante: a própria prévia já
+   é um <a> que abre o arquivo. A função que ele cumpria — o único caminho que
+   salva em Fotos no iPhone — continua ali, e o recado acima da grade agora
+   manda tocar na imagem em vez de procurar um link que não existe mais.
+
    O nome do arquivo baixado leva "sarah-poncio-7777" na frente: o arquivo vai
    parar na pasta de downloads de gente que baixou outras dez coisas hoje, e
    "coragem-e-coracao.jpg" sozinho não diz de quem é.
@@ -178,16 +191,11 @@ const cards = manifesto.map((a) => {
                alt="${esc(a.alt)}">
         </a>
         <div class="arte__corpo">
-          <h3 class="arte__titulo">${esc(a.titulo)}</h3>
-          <p class="arte__txt">${esc(a.descricao)}</p>
-          <p class="arte__ficha">${a.download.largura} × ${a.download.altura} · ${a.download.kb} KB · JPG</p>
-          <div class="arte__acoes">
-            <a class="btn btn--navy" href="${arq}" download="sarah-poncio-7777-${a.slug}.jpg">
-              ${ICONE_BAIXAR}
-              Baixar
-            </a>
-            <a class="link" href="${arq}" target="_blank" rel="noopener">Abrir imagem</a>
-          </div>
+          <a class="btn btn--navy" href="${arq}" download="sarah-poncio-7777-${a.slug}.jpg"
+             aria-label="Baixar o papel de parede ${esc(a.titulo)}">
+            ${ICONE_BAIXAR}
+            Baixar
+          </a>
         </div>
       </li>`;
 }).join('\n');

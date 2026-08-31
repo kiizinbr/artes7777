@@ -459,32 +459,18 @@ h1, h2, h3 {
   border-bottom: 2px solid var(--navy);
 }
 .arte__previa img { width: 100%; height: 100%; object-fit: cover; }
-.arte__corpo { padding: 16px 14px 18px; display: flex; flex-direction: column; flex: 1; }
-.arte__titulo { font-size: clamp(19px, 2.6vw, 26px); }
-.arte__txt { margin: 10px 0 0; font-size: 15px; color: var(--txt-2); flex: 1; }
-.arte__ficha {
-  margin: 14px 0 16px;
-  font-family: var(--cond);
-  font-size: 14px;
-  font-weight: 700;
-  letter-spacing: .12em;
-  text-transform: uppercase;
-  color: var(--txt-fraco);
-}
-/* O botão ocupa a linha inteira e o "Abrir imagem" vai para baixo dele: numa
-   coluna estreita os dois lado a lado espremem o botão a menos de 100px.
-
-   `@container`, e não `@media`: quem aperta o botão é a largura da COLUNA, não
-   a da janela. Com media query, uma janela de 600px punha os dois lado a lado
-   — só que ali a grade já tinha virado 3 colunas de 175px, e o botão estourava
-   a caixa do card. A pergunta certa é sobre o card, então quem responde é ele. */
+/* O card é a arte e o botão. O botão ocupa a linha inteira porque é a única
+   coisa clicável do corpo — deixá-lo estreito ao lado de espaço vazio faria
+   parecer que falta alguma coisa ali. */
+.arte__corpo { padding: 14px; display: flex; }
+.arte__corpo .btn { flex: 1; }
+/* `@container`, e não `@media`: quem aperta o botão é a largura da COLUNA, não
+   a da janela. Com media query, uma janela de 600px dava folga ao card — só que
+   ali a grade já tinha virado 3 colunas estreitas, e o botão estourava a caixa.
+   A pergunta certa é sobre o card, então quem responde é ele. */
 .arte { container-type: inline-size; }
-.arte__acoes { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; }
-.arte__acoes .btn { align-self: stretch; }
 @container (min-width: 250px) {
-  .arte__corpo { padding: 20px 20px 22px; }
-  .arte__acoes { flex-direction: row; flex-wrap: wrap; align-items: center; gap: 14px 18px; }
-  .arte__acoes .btn { flex: 1 1 auto; align-self: auto; }
+  .arte__corpo { padding: 18px; }
 }
 
 /* -----------------------------------------------------------------------------
