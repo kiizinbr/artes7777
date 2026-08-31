@@ -1,0 +1,16 @@
+{
+  "name": "artes7777",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Hub de artes digitais da campanha Sarah Poncio 7777 (HTML estático, GitHub Pages)",
+  "type": "module",
+  "scripts": {
+    "dev": "node scripts/serve.mjs",
+    "start": "node scripts/serve.mjs",
+    "artes": "node scripts/prepara-artes.mjs"
+  },
+  "devDependencies": {
+    "playwright-core": "^1.62.1",
+    "sharp": "^0.35.3"
+  }
+}

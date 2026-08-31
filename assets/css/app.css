@@ -1,0 +1,569 @@
+/* =============================================================================
+   Hub de artes digitais — Sarah Poncio 7777
+   Sem framework, sem build. Os tokens e as regras de contraste vieram do site
+   de campanha (C:\dev\sarah-poncio-federal/assets/css/site.css) e valem aqui
+   pelo mesmo motivo: é a mesma marca e é a mesma medição.
+   ========================================================================== */
+
+/* -----------------------------------------------------------------------------
+   1. FONTES
+   Locais, nunca do Google. O <link> do fonts.googleapis.com entregaria IP e
+   User-Agent de todo visitante antes de qualquer consentimento — e num
+   endereço de campanha o simples acesso já revela opinião política (LGPD,
+   art. 5º, II; o art. 11 não oferece legítimo interesse). Os .woff2 vieram do
+   repo do site, que os baixa com scripts/baixa-fontes.mjs.
+   -------------------------------------------------------------------------- */
+@font-face {
+  font-family: "Anton";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/anton-400-latin-ext.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: "Anton";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/anton-400-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Barlow";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/barlow-400-latin-ext.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: "Barlow";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/barlow-400-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Barlow";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("../fonts/barlow-500-latin-ext.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: "Barlow";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("../fonts/barlow-500-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Barlow";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("../fonts/barlow-600-latin-ext.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: "Barlow";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("../fonts/barlow-600-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Barlow";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("../fonts/barlow-700-latin-ext.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: "Barlow";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("../fonts/barlow-700-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Barlow Condensed";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("../fonts/barlow-condensed-700-latin-ext.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: "Barlow Condensed";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("../fonts/barlow-condensed-700-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* -----------------------------------------------------------------------------
+   2. TOKENS — cópia fiel do site de campanha
+   Os contrastes ao lado foram MEDIDOS lá, não estimados. O laranja da marca
+   reprova como texto (2.79:1 sobre branco): ele serve de grafismo e de fundo,
+   e quem escreve é o --laranja-700.
+   -------------------------------------------------------------------------- */
+:root {
+  color-scheme: light;
+
+  --navy-950: #0a0f2e;
+  --navy:     #172053;
+  --navy-700: #24306f;
+  --navy-100: #dfe2ee;
+
+  --laranja:         #fe6f29;   /* só grafismo e fundo — 2.79:1, nunca texto */
+  --laranja-display: #ec5c13;   /* título grande sobre BRANCO — 3.44:1 */
+  --laranja-700:     #b8440d;   /* único laranja legível como texto — 5.43:1 */
+
+  --branco: #ffffff;
+  --papel:  #f4f4f6;
+
+  --txt:       var(--navy);
+  --txt-2:     #4a4f63;         /* 7.38 sobre papel */
+  --txt-fraco: #63697e;         /* 4.96 sobre papel */
+  --borda:     rgba(23, 32, 83, .14);
+
+  --txt-navy-2: rgba(255, 255, 255, .86);
+  --txt-navy-3: rgba(255, 255, 255, .74);
+  --borda-navy: rgba(255, 255, 255, .22);
+
+  --display: "Anton", "Arial Narrow", Impact, sans-serif;
+  --cond:    "Barlow Condensed", "Arial Narrow", sans-serif;
+  --texto:   "Barlow", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  --gutter: clamp(20px, 5vw, 64px);
+  --max:    1120px;
+}
+
+/* -----------------------------------------------------------------------------
+   3. BASE
+   -------------------------------------------------------------------------- */
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--papel);
+  color: var(--txt);
+  font-family: var(--texto);
+  font-size: 17px;
+  line-height: 1.62;
+  -webkit-text-size-adjust: 100%;
+}
+img { display: block; max-width: 100%; }
+
+.wrap { max-width: var(--max); margin-inline: auto; padding-inline: var(--gutter); }
+
+/* Anel de foco em duas camadas, igual ao do site: navy por dentro (passa em
+   qualquer fundo claro daqui) e o laranja da marca por fora, que é o que se vê.
+   O box-shadow tem blur ZERO — é massa de cor sólida, não a sombra difusa que
+   a direção visual proíbe. */
+:focus-visible {
+  outline: 3px solid var(--navy);
+  outline-offset: 3px;
+  box-shadow: 0 0 0 6px var(--laranja);
+  border-radius: 2px;
+}
+.sobre-navy :focus-visible, .legal :focus-visible {
+  outline-color: var(--laranja);
+  box-shadow: 0 0 0 6px var(--branco);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: .001ms !important;
+    transition-duration: .001ms !important;
+  }
+}
+
+/* O link de pular vive fora da tela até receber foco. */
+.pular {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 100;
+  background: var(--navy);
+  color: var(--branco);
+  padding: 14px 20px;
+  font-weight: 700;
+  text-decoration: none;
+}
+.pular:focus { left: 0; }
+
+/* Anton é caixa-alta e tem métrica alta: em PT-BR o acento colide com a linha
+   de cima abaixo de ~1.05. Tracking positivo, nunca negativo. */
+h1, h2, h3 {
+  font-family: var(--display);
+  font-weight: 400;
+  text-transform: uppercase;
+  line-height: 1.06;
+  letter-spacing: .012em;
+  margin: 0;
+}
+
+/* -----------------------------------------------------------------------------
+   4. HEADER
+   -------------------------------------------------------------------------- */
+.topo {
+  background: var(--branco);
+  border-bottom: 2px solid var(--navy);
+}
+.topo__in {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  min-height: 72px;
+  max-width: var(--max);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+.marca { display: flex; align-items: center; gap: 11px; text-decoration: none; flex-shrink: 0; }
+.marca__nome {
+  font-family: var(--texto);
+  font-weight: 700;
+  font-size: 20px;
+  letter-spacing: -.01em;
+  line-height: 1;
+  color: var(--navy);
+  white-space: nowrap;
+}
+.marca__nome span { color: var(--laranja-700); }
+.marca__num {
+  font-family: var(--cond);
+  font-size: 21px;
+  font-weight: 700;
+  letter-spacing: .04em;
+  line-height: 1;
+  color: var(--branco);
+  background: var(--navy);
+  padding: 5px 9px 4px;
+}
+.topo__volta {
+  margin-left: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 10px 0;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--navy);
+  border-bottom: 2px solid transparent;
+}
+.topo__volta:hover { border-color: var(--laranja); color: var(--laranja-700); }
+@media (max-width: 420px) {
+  .marca__nome { font-size: 17px; }
+  .marca__num  { font-size: 18px; }
+  /* Sobra a seta, e o aria-label diz o resto. O `min-width` não é enfeite: sem
+     ele a caixa encolhe para os 16px do ícone e o alvo de toque reprova a
+     WCAG 2.5.8 — medido pelo audita-contraste em 390px. */
+  .topo__volta span { display: none; }
+  .topo__volta { min-width: 44px; justify-content: flex-end; }
+}
+
+/* -----------------------------------------------------------------------------
+   5. ABERTURA
+   -------------------------------------------------------------------------- */
+/* padding-BLOCK, nao o shorthand: .abre tambem carrega .wrap, e um `padding`
+   completo aqui zera o `padding-inline` do gutter que vem de la — o titulo
+   encostava na borda esquerda do celular. Mesma armadilha em .secao. */
+.abre { padding-block: clamp(40px, 7vw, 76px) clamp(28px, 4vw, 40px); }
+.abre__chapeu {
+  font-family: var(--cond);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--laranja-700);
+  margin: 0 0 14px;
+}
+.abre h1 { font-size: clamp(40px, 8vw, 76px); }
+.abre h1 em { font-style: normal; color: var(--laranja-display); }
+.abre__sub {
+  margin: 20px 0 0;
+  max-width: 46ch;
+  font-size: clamp(17px, 2.2vw, 20px);
+  color: var(--txt-2);
+}
+
+/* -----------------------------------------------------------------------------
+   6. CARD DA MOLDURA — o destaque navy
+   A hierarquia é massa de cor e corte diagonal, não sombra.
+   -------------------------------------------------------------------------- */
+.destaque {
+  position: relative;
+  background: var(--navy);
+  color: var(--branco);
+  padding: clamp(28px, 4vw, 44px);
+  overflow: hidden;
+  /* a mesma diagonal do sistema de botões do site, em escala de bloco */
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 34px), calc(100% - 46px) 100%, 0 100%);
+}
+/* Campo mais escuro cortado na diagonal, e SOBRE ele um fio laranja.
+   O campo é navy-950 CHAPADO, não laranja transparente: laranja a 16% sobre
+   navy dá roxo, e roxo não existe nesta paleta — a marca é bicolor, e o que
+   distingue as superfícies é a alternância navy/laranja, não um terceiro tom.
+
+   O corte não é decorativo solto: ele passa entre a coluna de texto e a do
+   botão. Por isso 34% e não 46% — a 46% o topo da diagonal caía 21px ANTES do
+   fim do título (medido em 1280 e em 1440), e o fio laranja cruzava a última
+   palavra. Mudou o texto do h2? Meça de novo. */
+.destaque::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 0 auto;
+  width: 34%;
+  background: var(--navy-950);
+  clip-path: polygon(70px 0, 100% 0, 100% 100%, 0 100%);
+}
+.destaque::after {
+  content: "";
+  position: absolute;
+  top: -40px;
+  right: calc(34% - 3px);
+  width: 7px;
+  height: 140%;
+  background: var(--laranja);
+  transform: rotate(7deg);
+  transform-origin: top center;
+}
+.destaque__grid {
+  position: relative;
+  z-index: 1;   /* acima do ::before e do ::after, que sao grafismo */
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: clamp(22px, 4vw, 48px);
+}
+.destaque__chapeu {
+  font-family: var(--cond);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--laranja);
+  margin: 0 0 10px;
+}
+/* max-width em ch trava o texto ANTES do corte diagonal. Sem ele o h2 cresce
+   com a caixa e a ponta da ultima letra encosta no fio laranja: medido por
+   diferenca de pixel, 8 pixels de glifo cobertos em toda largura >= 1088px.
+   Mudou o texto do h2? Rode de novo o teste de pixel. */
+.destaque h2 { font-size: clamp(26px, 4vw, 40px); max-width: 24ch; }
+.destaque p {
+  margin: 14px 0 0;
+  max-width: 44ch;
+  color: var(--txt-navy-2);
+  font-size: 16px;
+}
+@media (max-width: 720px) {
+  .destaque__grid { grid-template-columns: 1fr; }
+  /* O corte diagonal só funciona quando há coluna vazia à direita para ele
+     ocupar. Num bloco de 350px o texto atravessa o corte inteiro e o fio
+     laranja passa no meio da frase — atrás dela, mas atrapalhando a leitura
+     do mesmo jeito. No celular o grafismo desce para a base, em faixa reta. */
+  .destaque::before { inset: auto 0 0 0; width: auto; height: 10px; clip-path: none; }
+  .destaque::after  { inset: auto 0 0 0; width: auto; height: 4px; transform: none; }
+  .destaque { padding-bottom: calc(clamp(28px, 4vw, 44px) + 14px); }
+}
+
+/* -----------------------------------------------------------------------------
+   7. BOTÕES
+   -------------------------------------------------------------------------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 48px;
+  padding: 13px 26px;
+  font-family: var(--texto);
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 0;
+  cursor: pointer;
+  transition: background-color .16s ease, color .16s ease, transform .16s ease;
+  clip-path: polygon(0 0, 100% 0, 97% 100%, 0 100%);
+}
+.btn:hover { transform: translateX(2px); }
+.btn--primario { background: var(--laranja); color: var(--navy-950); }   /* 5.50:1 */
+.btn--primario:hover { background: var(--branco); color: var(--navy); }
+
+.btn--navy { background: var(--navy); color: var(--branco); }            /* 15.35:1 */
+.btn--navy:hover { background: var(--laranja); color: var(--navy-950); }
+
+/* Link de apoio: sublinhado de verdade, para não depender só da cor. */
+.link {
+  color: var(--laranja-700);
+  font-weight: 600;
+  font-size: 15px;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.link:hover { color: var(--navy); }
+
+/* -----------------------------------------------------------------------------
+   8. WALLPAPERS
+   -------------------------------------------------------------------------- */
+.secao { padding-block: clamp(48px, 7vw, 88px) 0; }
+.secao__cabeca { margin-bottom: clamp(22px, 3vw, 34px); }
+.secao__cabeca h2 { font-size: clamp(28px, 5vw, 46px); }
+.secao__cabeca h2 em { font-style: normal; color: var(--laranja-display); }
+.secao__cabeca p { margin: 12px 0 0; max-width: 52ch; color: var(--txt-2); }
+
+.grade {
+  display: grid;
+  /* 150px, e nao 158: com 158 um iPhone SE de 375px caia para UMA coluna por
+     1px de diferenca e a pagina ia a 4.422px — exatamente o que este minimo
+     existe para evitar. 2x150 + 20 de gap = 320, cabe ate em 320px de tela.
+     Com uma coluna so, cada card de 9:16 fica com 620px de altura e a rolagem
+     cansa antes de a pessoa chegar na terceira arte. */
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: clamp(20px, 3vw, 32px);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.arte {
+  display: flex;
+  flex-direction: column;
+  background: var(--branco);
+  border: 2px solid var(--navy);
+}
+/* A prévia guarda a proporção 9:16 antes de a imagem chegar: sem isso o card
+   pula de altura no meio da leitura e leva o botão junto. */
+.arte__previa {
+  display: block;
+  aspect-ratio: 9 / 16;
+  background: var(--navy-100);
+  border-bottom: 2px solid var(--navy);
+}
+.arte__previa img { width: 100%; height: 100%; object-fit: cover; }
+.arte__corpo { padding: 16px 14px 18px; display: flex; flex-direction: column; flex: 1; }
+.arte__titulo { font-size: clamp(19px, 2.6vw, 26px); }
+.arte__txt { margin: 10px 0 0; font-size: 15px; color: var(--txt-2); flex: 1; }
+.arte__ficha {
+  margin: 14px 0 16px;
+  font-family: var(--cond);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--txt-fraco);
+}
+/* O botão ocupa a linha inteira e o "Abrir imagem" vai para baixo dele: numa
+   coluna estreita os dois lado a lado espremem o botão a menos de 100px.
+
+   `@container`, e não `@media`: quem aperta o botão é a largura da COLUNA, não
+   a da janela. Com media query, uma janela de 600px punha os dois lado a lado
+   — só que ali a grade já tinha virado 3 colunas de 175px, e o botão estourava
+   a caixa do card. A pergunta certa é sobre o card, então quem responde é ele. */
+.arte { container-type: inline-size; }
+.arte__acoes { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; }
+.arte__acoes .btn { align-self: stretch; }
+@container (min-width: 250px) {
+  .arte__corpo { padding: 20px 20px 22px; }
+  .arte__acoes { flex-direction: row; flex-wrap: wrap; align-items: center; gap: 14px 18px; }
+  .arte__acoes .btn { flex: 1 1 auto; align-self: auto; }
+}
+
+/* -----------------------------------------------------------------------------
+   9. RECADO DO IPHONE
+   Não é dica de rodapé: no iPhone o <a download> leva o arquivo para o app
+   Arquivos, e quem quer papel de parede precisa dele em FOTOS. O caminho que
+   funciona em todo aparelho é abrir a imagem e segurar o dedo nela — e isso
+   ninguém adivinha, então está escrito na página, antes dos cards.
+   -------------------------------------------------------------------------- */
+.recado {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  margin: 24px 0 clamp(22px, 3vw, 32px);
+  padding: 18px 20px;
+  background: var(--branco);
+  border-left: 6px solid var(--laranja);
+}
+.recado svg { flex: none; color: var(--laranja-700); margin-top: 2px; }
+.recado p { margin: 0; font-size: 15px; color: var(--txt-2); }
+.recado b { color: var(--navy); }
+
+/* -----------------------------------------------------------------------------
+   10. PÉ
+   -------------------------------------------------------------------------- */
+.pe {
+  margin-top: clamp(56px, 8vw, 96px);
+  background: var(--navy);
+  color: var(--txt-navy-2);
+  padding: clamp(32px, 5vw, 52px) 0 0;
+}
+.pe__topo { display: flex; flex-wrap: wrap; gap: 18px 40px; justify-content: space-between; align-items: baseline; }
+.pe h2 { font-size: clamp(22px, 3vw, 30px); color: var(--branco); }
+.pe p { margin: 10px 0 0; max-width: 44ch; font-size: 15px; }
+.pe a { color: var(--branco); }
+.pe__links { display: flex; flex-wrap: wrap; gap: 10px 26px; margin: 26px 0 0; padding: 0; list-style: none; }
+.pe__links a {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--branco);
+  border-bottom: 2px solid var(--borda-navy);
+  display: inline-block;
+  min-height: 44px;
+  padding-top: 11px;
+}
+.pe__links a:hover { border-color: var(--laranja); }
+
+/* Aviso de privacidade. Medida de leitura curta e corpo menor: é texto legal,
+   mas texto legal que ninguém lê não cumpre a função de informar. */
+.aviso {
+  margin-top: clamp(30px, 4vw, 44px);
+  padding-top: clamp(24px, 3vw, 32px);
+  border-top: 1px solid var(--borda-navy);
+  max-width: 1120px;
+}
+.aviso__titulo {
+  font-family: var(--cond);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--laranja);          /* 5.49:1 sobre navy */
+  margin: 0 0 12px;
+}
+.aviso p { margin: 0 0 10px; max-width: 74ch; font-size: 14px; line-height: 1.65; }
+.aviso b { color: var(--branco); }
+
+/* Identificação legal da peça. Fica no fim, em navy mais escuro, e traz os dois
+   CNPJs — o do contratante e o de quem produziu. */
+.legal {
+  margin-top: clamp(28px, 4vw, 40px);
+  background: var(--navy-950);
+  color: var(--txt-navy-3);
+  font-size: 12.5px;
+  line-height: 1.6;
+  padding-block: 22px;
+}
+.legal strong { color: var(--txt-navy-2); }
+.legal__in { display: flex; flex-wrap: wrap; gap: 8px 28px; justify-content: space-between; }

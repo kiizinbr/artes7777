@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Sarah Poncio">
+  <!-- Icone de aba: iniciais SP nas cores da campanha, dentro da forma diagonal do
+       selo (cantos superior-esquerdo e inferior-direito arredondados).
+       As letras sao "path", nao "text": favicon nao carrega webfont, entao um
+       font-family aqui renderizaria diferente em cada maquina. Os contornos vieram
+       da Montserrat ExtraBold (SIL OFL), que e a mais proxima da tipografia do
+       logo oficial e a unica que mantem massa suficiente a 16px.
+       Os derivados (.ico, apple-touch, 512) saem de: node scripts/gera-favicon.mjs -->
+  <path d="M20 0h44v44a20 20 0 0 1-20 20H0V20A20 20 0 0 1 20 0Z" fill="#172053"/>
+  <g fill="#ffffff"><path transform="translate(1.66,48.35) scale(0.4670)" d="M31.60 1.40Q23 1.40 15.05-0.75Q7.10-2.90 2.10-6.30L8.60-20.90Q13.30-17.90 19.45-15.95Q25.60-14 31.70-14Q35.80-14 38.30-14.75Q40.80-15.50 41.95-16.75Q43.10-18 43.10-19.70Q43.10-22.10 40.90-23.50Q38.70-24.90 35.20-25.80Q31.70-26.70 27.45-27.60Q23.20-28.50 18.95-29.90Q14.70-31.30 11.20-33.55Q7.70-35.80 5.50-39.45Q3.30-43.10 3.30-48.70Q3.30-55 6.75-60.10Q10.20-65.20 17.10-68.30Q24-71.40 34.30-71.40Q41.20-71.40 47.85-69.85Q54.50-68.30 59.70-65.30L53.60-50.60Q48.60-53.30 43.70-54.65Q38.80-56 34.20-56Q30.10-56 27.60-55.15Q25.10-54.30 24-52.90Q22.90-51.50 22.90-49.70Q22.90-47.40 25.05-46.05Q27.20-44.70 30.75-43.85Q34.30-43 38.55-42.10Q42.80-41.20 47.05-39.85Q51.30-38.50 54.80-36.25Q58.30-34 60.45-30.35Q62.60-26.70 62.60-21.20Q62.60-15.10 59.15-9.95Q55.70-4.80 48.85-1.70Q42 1.40 31.60 1.40"/></g>
+  <g fill="#FE6F29"><path transform="translate(28.62,48.35) scale(0.4670)" d="M26.80 0L7 0L7-70L39-70Q48.60-70 55.55-66.90Q62.50-63.80 66.30-57.95Q70.10-52.10 70.10-44.10Q70.10-36.20 66.30-30.40Q62.50-24.60 55.55-21.45Q48.60-18.30 39-18.30L18-18.30L26.80-26.90L26.80 0M26.80-63.50L26.80-24.80L18-33.90L37.80-33.90Q44-33.90 47.05-36.60Q50.10-39.30 50.10-44.10Q50.10-49 47.05-51.70Q44-54.40 37.80-54.40L18-54.40"/></g>
+</svg>

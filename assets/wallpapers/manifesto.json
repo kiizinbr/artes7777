@@ -1,0 +1,55 @@
+{
+  "artes": [
+    {
+      "slug": "coragem-e-coracao",
+      "titulo": "Coragem e Coração",
+      "descricao": "O retrato de campanha com a assinatura completa — nome, cargo, número e o lema. O bloco de texto fica na parte de baixo, onde o relógio da tela de bloqueio não alcança.",
+      "alt": "Papel de parede vertical: Sarah Poncio de blusa cinza sobre fundo claro, à direita. À esquerda, em letras grandes, \"SARAH PONCIO\", a tarja \"Deputada Federal\", o número 7777 e o lema \"Coragem e Coração\". Embaixo, a hashtag \"#AgoraÉFederal\". Na borda esquerda, na vertical, \"Federação Renovação Solidária PRD/Solidariedade\".",
+      "download": {
+        "arquivo": "coragem-e-coracao-1080x1920.jpg",
+        "largura": 1080,
+        "altura": 1920,
+        "kb": 249
+      },
+      "previa": {
+        "arquivo": "coragem-e-coracao-previa.webp",
+        "largura": 486,
+        "altura": 864
+      }
+    },
+    {
+      "slug": "dia-4-de-outubro",
+      "titulo": "Dia 4 de outubro",
+      "descricao": "A data da eleição em balão de fala, junto de \"Em defesa das mulheres\". A assinatura sobe para o topo — é a arte para quem quer o rosto no centro da tela.",
+      "alt": "Papel de parede vertical: Sarah Poncio ao centro, sobre fundo claro. Acima dela, \"SARAH PONCIO\", a tarja \"Deputada Federal\", o número 7777 e o lema \"Coragem e Coração\". Dois balões de fala trazem \"Dia 4 de outubro vote 7777\" e \"Em defesa das mulheres\". No rodapé, a hashtag \"#AgoraÉFederal\". Na borda esquerda, na vertical, \"Federação Renovação Solidária PRD/Solidariedade\".",
+      "download": {
+        "arquivo": "dia-4-de-outubro-1080x1920.jpg",
+        "largura": 1080,
+        "altura": 1920,
+        "kb": 247
+      },
+      "previa": {
+        "arquivo": "dia-4-de-outubro-previa.webp",
+        "largura": 486,
+        "altura": 864
+      }
+    },
+    {
+      "slug": "padrao-coracoes",
+      "titulo": "Padrão de corações",
+      "descricao": "Sem foto: a assinatura 7777 repetida entre corações azuis e laranja. É a mais discreta das três — funciona atrás dos ícones sem competir com eles.",
+      "alt": "Papel de parede vertical em fundo verde-acinzentado, com a assinatura \"SARAH PONCIO / Deputada Federal / 7777\" repetida em grade, intercalada por corações azuis e laranja. No rodapé, \"Federação Renovação Solidária PRD/Solidariedade\".",
+      "download": {
+        "arquivo": "padrao-coracoes-1080x1920.jpg",
+        "largura": 1080,
+        "altura": 1920,
+        "kb": 464
+      },
+      "previa": {
+        "arquivo": "padrao-coracoes-previa.webp",
+        "largura": 486,
+        "altura": 864
+      }
+    }
+  ]
+}
