@@ -486,7 +486,8 @@ h1, h2, h3 {
 .grade--midias { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
 @media (min-width: 900px) { .grade--midias { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
 .arte__previa video { display: block; width: 100%; height: 100%; object-fit: cover; background: var(--navy); }
-.midia { scroll-margin-top: 20px; }
+/* 48px e nao 20: a fonte chega DEPOIS da rolagem do link direto e empurra a pagina ~25px */
+.midia { scroll-margin-top: 48px; }
 .midia:target { border-color: var(--laranja); outline: 4px solid var(--laranja); }
 .midia__corpo { padding: 14px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
 .midia__titulo {
