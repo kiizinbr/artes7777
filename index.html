@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Artes digitais · Sarah Poncio 7777</title>
-<meta name="description" content="Papéis de parede e moldura de perfil da campanha Sarah Poncio, Deputada Federal 7777. Baixe de graça e leve para o seu celular.">
+<title>Mídias da campanha · Sarah Poncio 7777</title>
+<meta name="description" content="Vídeos, cards, papéis de parede e moldura de perfil da campanha Sarah Poncio, Deputada Federal 7777. Baixe de graça e compartilhe.">
 <meta name="theme-color" content="#172053">
 
 <!-- Cartão de link. Não é enfeite: o endereço vai circular em grupo de
@@ -13,8 +13,8 @@
 <meta property="og:type" content="website">
 <meta property="og:locale" content="pt_BR">
 <meta property="og:url" content="https://kiizinbr.github.io/artes7777/">
-<meta property="og:title" content="Artes digitais da campanha 7777">
-<meta property="og:description" content="Papéis de parede para o celular e a moldura de perfil. Baixe de graça.">
+<meta property="og:title" content="Mídias da campanha 7777">
+<meta property="og:description" content="Vídeos, cards, papéis de parede e a moldura de perfil. Baixe de graça e compartilhe.">
 <meta property="og:image" content="https://kiizinbr.github.io/artes7777/assets/brand/cartao.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -51,9 +51,9 @@
 
   <section class="abre wrap">
     <p class="abre__chapeu">Sarah Poncio · Deputada Federal · 7777</p>
-    <h1>Artes <em>digitais</em></h1>
-    <p class="abre__sub">Papel de parede para o celular e moldura para a sua foto de perfil.
-      Tudo de graça, tudo pronto para baixar e compartilhar.</p>
+    <h1>Mídias da <em>campanha</em></h1>
+    <p class="abre__sub">Vídeos, cards, papel de parede para o celular e moldura para a sua
+      foto de perfil. Tudo de graça, com link direto para mandar no WhatsApp.</p>
   </section>
 
   <!-- A moldura é o único item que a pessoa MONTA (ela põe a foto dela), então
@@ -75,6 +75,156 @@
         </a>
       </div>
     </div>
+  </section>
+
+  <!-- Vídeos e cards: cada peça tem id próprio, e o id é o LINK DIRETO que a
+       campanha manda no WhatsApp (…/artes7777/#video-faltam-3-dias). Os dois
+       blocos de <ul> são reescritos por `node scripts/prepara-midias.mjs`. -->
+  <section class="secao wrap" id="videos" aria-labelledby="t-videos">
+    <div class="secao__cabeca">
+      <h2 id="t-videos">Vídeos da <em>campanha</em></h2>
+      <p>Assista, baixe ou mande o link direto de cada vídeo. Quem recebe o link cai
+        aqui, já no vídeo certo.</p>
+    </div>
+
+    <!-- VIDEOS:INICIO — reescrito por `node scripts/prepara-midias.mjs`; não editar à mão. -->
+    <ul class="grade grade--midias">
+      <li class="arte midia" id="video-urna-7777">
+        <div class="arte__previa">
+          <video controls playsinline preload="none" poster="assets/midias/urna-7777.webp" aria-label="Vídeo: Na urna: 7777, confirma">
+            <source src="assets/midias/urna-7777.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="midia__corpo">
+          <h3 class="midia__titulo">Na urna: 7777, confirma</h3>
+          <p class="midia__meta">Sarah digita 7777 na urna e confirma. Vídeo · 10 s · 1,3 MB</p>
+        <div class="midia__acoes">
+          <a class="btn btn--navy" href="assets/midias/urna-7777.mp4" download="sarah-poncio-7777-urna-7777.mp4" aria-label="Baixar: Na urna: 7777, confirma">
+            <svg width="17" height="17" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0 4.6-4.6M12 15l-4.6-4.6M4 19h16"/></svg>
+            Baixar
+          </a>
+          <button class="btn btn--linha" type="button" data-copia="https://kiizinbr.github.io/artes7777/#video-urna-7777" hidden aria-label="Copiar o link direto de: Na urna: 7777, confirma">
+            <svg width="17" height="17" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 14a4.5 4.5 0 0 0 6.4 0l3-3a4.5 4.5 0 0 0-6.4-6.4l-1.2 1.2"/><path d="M14 10a4.5 4.5 0 0 0-6.4 0l-3 3a4.5 4.5 0 0 0 6.4 6.4l1.2-1.2"/></svg>
+            <span data-copia-rotulo>Copiar link</span>
+          </button>
+          <a class="btn btn--primario" href="https://wa.me/?text=Na%20urna%20%C3%A9%207777%20e%20confirma!%20https%3A%2F%2Fkiizinbr.github.io%2Fartes7777%2F%23video-urna-7777" target="_blank" rel="noopener noreferrer" aria-label="Enviar no WhatsApp: Na urna: 7777, confirma">
+            <svg width="17" height="17" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2Zm5.8 14.17c-.24.68-1.42 1.31-1.96 1.36-.5.05-.98.23-3.3-.69-2.78-1.1-4.55-3.94-4.69-4.12-.14-.18-1.12-1.49-1.12-2.85 0-1.35.71-2.02.96-2.29.25-.28.55-.35.73-.35.18 0 .37 0 .53.01.17.01.4-.06.63.48.24.55.8 1.9.87 2.04.07.14.12.3.02.48-.09.18-.14.29-.28.45-.14.16-.3.36-.42.48-.14.14-.29.29-.12.57.16.28.73 1.2 1.56 1.94 1.07.95 1.97 1.25 2.25 1.39.28.14.44.12.6-.07.17-.19.7-.81.88-1.09.18-.28.37-.23.62-.14.25.09 1.6.75 1.87.89.28.14.46.21.53.32.07.11.07.65-.17 1.33Z"/></svg>
+            WhatsApp
+          </a>
+        </div>
+        </div>
+      </li>
+      <li class="arte midia" id="video-faltam-5-dias">
+        <div class="arte__previa">
+          <video controls playsinline preload="none" poster="assets/midias/faltam-5-dias.webp" aria-label="Vídeo: Faltam 5 dias">
+            <source src="assets/midias/faltam-5-dias.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="midia__corpo">
+          <h3 class="midia__titulo">Faltam 5 dias</h3>
+          <p class="midia__meta">Contagem para o dia 4 de outubro. Vídeo · 15 s · 1,3 MB</p>
+        <div class="midia__acoes">
+          <a class="btn btn--navy" href="assets/midias/faltam-5-dias.mp4" download="sarah-poncio-7777-faltam-5-dias.mp4" aria-label="Baixar: Faltam 5 dias">
+            <svg width="17" height="17" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0 4.6-4.6M12 15l-4.6-4.6M4 19h16"/></svg>
+            Baixar
+          </a>
+          <button class="btn btn--linha" type="button" data-copia="https://kiizinbr.github.io/artes7777/#video-faltam-5-dias" hidden aria-label="Copiar o link direto de: Faltam 5 dias">
+            <svg width="17" height="17" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 14a4.5 4.5 0 0 0 6.4 0l3-3a4.5 4.5 0 0 0-6.4-6.4l-1.2 1.2"/><path d="M14 10a4.5 4.5 0 0 0-6.4 0l-3 3a4.5 4.5 0 0 0 6.4 6.4l1.2-1.2"/></svg>
+            <span data-copia-rotulo>Copiar link</span>
+          </button>
+          <a class="btn btn--primario" href="https://wa.me/?text=Faltam%205%20dias%20para%20votar%207777!%20https%3A%2F%2Fkiizinbr.github.io%2Fartes7777%2F%23video-faltam-5-dias" target="_blank" rel="noopener noreferrer" aria-label="Enviar no WhatsApp: Faltam 5 dias">
+            <svg width="17" height="17" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2Zm5.8 14.17c-.24.68-1.42 1.31-1.96 1.36-.5.05-.98.23-3.3-.69-2.78-1.1-4.55-3.94-4.69-4.12-.14-.18-1.12-1.49-1.12-2.85 0-1.35.71-2.02.96-2.29.25-.28.55-.35.73-.35.18 0 .37 0 .53.01.17.01.4-.06.63.48.24.55.8 1.9.87 2.04.07.14.12.3.02.48-.09.18-.14.29-.28.45-.14.16-.3.36-.42.48-.14.14-.29.29-.12.57.16.28.73 1.2 1.56 1.94 1.07.95 1.97 1.25 2.25 1.39.28.14.44.12.6-.07.17-.19.7-.81.88-1.09.18-.28.37-.23.62-.14.25.09 1.6.75 1.87.89.28.14.46.21.53.32.07.11.07.65-.17 1.33Z"/></svg>
+            WhatsApp
+          </a>
+        </div>
+        </div>
+      </li>
+      <li class="arte midia" id="video-faltam-3-dias">
+        <div class="arte__previa">
+          <video controls playsinline preload="none" poster="assets/midias/faltam-3-dias.webp" aria-label="Vídeo: Faltam 3 dias">
+            <source src="assets/midias/faltam-3-dias.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="midia__corpo">
+          <h3 class="midia__titulo">Faltam 3 dias</h3>
+          <p class="midia__meta">Contagem para o dia 4 de outubro. Vídeo · 15 s · 1,3 MB</p>
+        <div class="midia__acoes">
+          <a class="btn btn--navy" href="assets/midias/faltam-3-dias.mp4" download="sarah-poncio-7777-faltam-3-dias.mp4" aria-label="Baixar: Faltam 3 dias">
+            <svg width="17" height="17" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0 4.6-4.6M12 15l-4.6-4.6M4 19h16"/></svg>
+            Baixar
+          </a>
+          <button class="btn btn--linha" type="button" data-copia="https://kiizinbr.github.io/artes7777/#video-faltam-3-dias" hidden aria-label="Copiar o link direto de: Faltam 3 dias">
+            <svg width="17" height="17" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 14a4.5 4.5 0 0 0 6.4 0l3-3a4.5 4.5 0 0 0-6.4-6.4l-1.2 1.2"/><path d="M14 10a4.5 4.5 0 0 0-6.4 0l-3 3a4.5 4.5 0 0 0 6.4 6.4l1.2-1.2"/></svg>
+            <span data-copia-rotulo>Copiar link</span>
+          </button>
+          <a class="btn btn--primario" href="https://wa.me/?text=Faltam%203%20dias%20para%20votar%207777!%20https%3A%2F%2Fkiizinbr.github.io%2Fartes7777%2F%23video-faltam-3-dias" target="_blank" rel="noopener noreferrer" aria-label="Enviar no WhatsApp: Faltam 3 dias">
+            <svg width="17" height="17" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2Zm5.8 14.17c-.24.68-1.42 1.31-1.96 1.36-.5.05-.98.23-3.3-.69-2.78-1.1-4.55-3.94-4.69-4.12-.14-.18-1.12-1.49-1.12-2.85 0-1.35.71-2.02.96-2.29.25-.28.55-.35.73-.35.18 0 .37 0 .53.01.17.01.4-.06.63.48.24.55.8 1.9.87 2.04.07.14.12.3.02.48-.09.18-.14.29-.28.45-.14.16-.3.36-.42.48-.14.14-.29.29-.12.57.16.28.73 1.2 1.56 1.94 1.07.95 1.97 1.25 2.25 1.39.28.14.44.12.6-.07.17-.19.7-.81.88-1.09.18-.28.37-.23.62-.14.25.09 1.6.75 1.87.89.28.14.46.21.53.32.07.11.07.65-.17 1.33Z"/></svg>
+            WhatsApp
+          </a>
+        </div>
+        </div>
+      </li>
+      <li class="arte midia" id="video-faltam-2-dias">
+        <div class="arte__previa">
+          <video controls playsinline preload="none" poster="assets/midias/faltam-2-dias.webp" aria-label="Vídeo: Faltam 2 dias">
+            <source src="assets/midias/faltam-2-dias.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="midia__corpo">
+          <h3 class="midia__titulo">Faltam 2 dias</h3>
+          <p class="midia__meta">Contagem para o dia 4 de outubro. Vídeo · 15 s · 1,3 MB</p>
+        <div class="midia__acoes">
+          <a class="btn btn--navy" href="assets/midias/faltam-2-dias.mp4" download="sarah-poncio-7777-faltam-2-dias.mp4" aria-label="Baixar: Faltam 2 dias">
+            <svg width="17" height="17" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0 4.6-4.6M12 15l-4.6-4.6M4 19h16"/></svg>
+            Baixar
+          </a>
+          <button class="btn btn--linha" type="button" data-copia="https://kiizinbr.github.io/artes7777/#video-faltam-2-dias" hidden aria-label="Copiar o link direto de: Faltam 2 dias">
+            <svg width="17" height="17" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 14a4.5 4.5 0 0 0 6.4 0l3-3a4.5 4.5 0 0 0-6.4-6.4l-1.2 1.2"/><path d="M14 10a4.5 4.5 0 0 0-6.4 0l-3 3a4.5 4.5 0 0 0 6.4 6.4l1.2-1.2"/></svg>
+            <span data-copia-rotulo>Copiar link</span>
+          </button>
+          <a class="btn btn--primario" href="https://wa.me/?text=Faltam%202%20dias%20para%20votar%207777!%20https%3A%2F%2Fkiizinbr.github.io%2Fartes7777%2F%23video-faltam-2-dias" target="_blank" rel="noopener noreferrer" aria-label="Enviar no WhatsApp: Faltam 2 dias">
+            <svg width="17" height="17" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2Zm5.8 14.17c-.24.68-1.42 1.31-1.96 1.36-.5.05-.98.23-3.3-.69-2.78-1.1-4.55-3.94-4.69-4.12-.14-.18-1.12-1.49-1.12-2.85 0-1.35.71-2.02.96-2.29.25-.28.55-.35.73-.35.18 0 .37 0 .53.01.17.01.4-.06.63.48.24.55.8 1.9.87 2.04.07.14.12.3.02.48-.09.18-.14.29-.28.45-.14.16-.3.36-.42.48-.14.14-.29.29-.12.57.16.28.73 1.2 1.56 1.94 1.07.95 1.97 1.25 2.25 1.39.28.14.44.12.6-.07.17-.19.7-.81.88-1.09.18-.28.37-.23.62-.14.25.09 1.6.75 1.87.89.28.14.46.21.53.32.07.11.07.65-.17 1.33Z"/></svg>
+            WhatsApp
+          </a>
+        </div>
+        </div>
+      </li>
+    </ul>    <!-- VIDEOS:FIM -->
+  </section>
+
+  <section class="secao wrap" id="cards" aria-labelledby="t-cards">
+    <div class="secao__cabeca">
+      <h2 id="t-cards">Cards para <em>compartilhar</em></h2>
+      <p>No formato do story, 1080 × 1920. Toque na imagem para abrir em tamanho cheio.</p>
+    </div>
+
+    <!-- CARDS:INICIO — reescrito por `node scripts/prepara-midias.mjs`; não editar à mão. -->
+    <ul class="grade grade--midias">
+      <li class="arte midia" id="card-5-curiosidades">
+        <a class="arte__previa" href="assets/midias/5-curiosidades-1080x1920.jpg" target="_blank" rel="noopener">
+          <img src="assets/midias/5-curiosidades-previa.webp" width="486" height="864" loading="lazy" decoding="async"
+               alt="Card vertical: 5 curiosidades sobre mim. 01, nascida em Caxias. 02, deputada mais jovem da Alerj. 03, criadora da Lei do Spray. 04, líder de bancada mais jovem da Alerj. 05, destaque em pautas voltadas aos direitos das mulheres, apoio a mães atípicas, inclusão social e proteção animal. Ao lado, foto de Sarah Poncio na Alerj.">
+        </a>
+        <div class="midia__corpo">
+          <h3 class="midia__titulo">5 curiosidades sobre mim</h3>
+          <p class="midia__meta">Imagem · 1080 × 1920 · 212 kB</p>
+        <div class="midia__acoes">
+          <a class="btn btn--navy" href="assets/midias/5-curiosidades-1080x1920.jpg" download="sarah-poncio-7777-5-curiosidades.jpg" aria-label="Baixar: 5 curiosidades sobre mim">
+            <svg width="17" height="17" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0 4.6-4.6M12 15l-4.6-4.6M4 19h16"/></svg>
+            Baixar
+          </a>
+          <button class="btn btn--linha" type="button" data-copia="https://kiizinbr.github.io/artes7777/#card-5-curiosidades" hidden aria-label="Copiar o link direto de: 5 curiosidades sobre mim">
+            <svg width="17" height="17" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 14a4.5 4.5 0 0 0 6.4 0l3-3a4.5 4.5 0 0 0-6.4-6.4l-1.2 1.2"/><path d="M14 10a4.5 4.5 0 0 0-6.4 0l-3 3a4.5 4.5 0 0 0 6.4 6.4l1.2-1.2"/></svg>
+            <span data-copia-rotulo>Copiar link</span>
+          </button>
+          <a class="btn btn--primario" href="https://wa.me/?text=5%20curiosidades%20sobre%20a%20Sarah%20Poncio%207777%20https%3A%2F%2Fkiizinbr.github.io%2Fartes7777%2F%23card-5-curiosidades" target="_blank" rel="noopener noreferrer" aria-label="Enviar no WhatsApp: 5 curiosidades sobre mim">
+            <svg width="17" height="17" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2Zm5.8 14.17c-.24.68-1.42 1.31-1.96 1.36-.5.05-.98.23-3.3-.69-2.78-1.1-4.55-3.94-4.69-4.12-.14-.18-1.12-1.49-1.12-2.85 0-1.35.71-2.02.96-2.29.25-.28.55-.35.73-.35.18 0 .37 0 .53.01.17.01.4-.06.63.48.24.55.8 1.9.87 2.04.07.14.12.3.02.48-.09.18-.14.29-.28.45-.14.16-.3.36-.42.48-.14.14-.29.29-.12.57.16.28.73 1.2 1.56 1.94 1.07.95 1.97 1.25 2.25 1.39.28.14.44.12.6-.07.17-.19.7-.81.88-1.09.18-.28.37-.23.62-.14.25.09 1.6.75 1.87.89.28.14.46.21.53.32.07.11.07.65-.17 1.33Z"/></svg>
+            WhatsApp
+          </a>
+        </div>
+        </div>
+      </li>
+    </ul>    <!-- CARDS:FIM -->
   </section>
 
   <section class="secao wrap" id="wallpapers" aria-labelledby="t-wallpapers">
@@ -158,7 +308,7 @@
     <ul class="pe__links">
       <li><a href="https://sarahponcio.com.br">Site da campanha</a></li>
       <li><a href="https://kiizinbr.github.io/moldura7777/">Moldura de perfil</a></li>
-      <li><a href="#wallpapers">Papéis de parede</a></li>
+      <li><a href="#videos">Vídeos</a></li>
       <li><a href="https://sarahponcio.com.br#privacidade">Privacidade</a></li>
     </ul>
   </div>
@@ -194,5 +344,6 @@
   </div>
 </footer>
 
+<script src="assets/js/app.js" defer></script>
 </body>
 </html>

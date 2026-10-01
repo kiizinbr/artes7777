@@ -474,6 +474,44 @@ h1, h2, h3 {
 }
 
 /* -----------------------------------------------------------------------------
+   8b. VÍDEOS E CARDS
+   Mesmo card dos papéis de parede, com três ações em vez de uma: baixar,
+   copiar o link direto e mandar no WhatsApp. O link direto é o id do card —
+   quem abre cai rolado até ele, e o card se marca com a borda laranja para a
+   pessoa saber qual foi o mandado.
+   -------------------------------------------------------------------------- */
+/* auto-FILL, não o auto-fit da .grade: com auto-fit uma seção de UM card só
+   (a dos cards hoje) esticava o item na largura toda e a arte virava um pôster
+   de 1.700px de altura. auto-fill guarda as colunas vazias. */
+.grade--midias { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
+@media (min-width: 900px) { .grade--midias { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+.arte__previa video { display: block; width: 100%; height: 100%; object-fit: cover; background: var(--navy); }
+.midia { scroll-margin-top: 20px; }
+.midia:target { border-color: var(--laranja); outline: 4px solid var(--laranja); }
+.midia__corpo { padding: 14px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
+.midia__titulo {
+  margin: 0;
+  font-family: var(--cond);
+  font-size: 19px;
+  font-weight: 700;
+  line-height: 1.15;
+  text-transform: uppercase;
+  color: var(--navy);
+}
+.midia__meta { margin: 0; font-size: 13px; color: var(--txt-fraco); }
+.midia__acoes { display: flex; flex-direction: column; gap: 8px; margin-top: auto; }
+.midia__acoes .btn { min-height: 44px; padding: 10px 14px; font-size: 13px; letter-spacing: .04em; gap: 8px; }
+/* O display:inline-flex do .btn ganharia do atributo hidden — e sem JS
+   sobraria um "Copiar link" que não faz nada. */
+.btn[hidden] { display: none; }
+.btn--linha { background: var(--branco); color: var(--navy); border: 2px solid var(--navy); clip-path: none; }
+.btn--linha:hover { background: var(--navy); color: var(--branco); }
+.btn--linha.copiado { background: var(--navy); color: var(--branco); }
+@container (min-width: 250px) {
+  .midia__corpo { padding: 18px; }
+}
+
+/* -----------------------------------------------------------------------------
    9. RECADO DO IPHONE
    Não é dica de rodapé: no iPhone o <a download> leva o arquivo para o app
    Arquivos, e quem quer papel de parede precisa dele em FOTOS. O caminho que

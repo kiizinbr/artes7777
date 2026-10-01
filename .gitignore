@@ -1,2 +1,4 @@
 node_modules/
 .tmp/
+# originais dos videos/cards: o Pages publicaria TUDO que for versionado (EXIF incluso)
+assets/midias/_fonte/
