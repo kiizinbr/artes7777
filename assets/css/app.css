@@ -485,6 +485,19 @@ h1, h2, h3 {
    de 1.700px de altura. auto-fill guarda as colunas vazias. */
 .grade--midias { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
 @media (min-width: 900px) { .grade--midias { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+/* Subtítulo dentro de "Cards": separa post (4:5) de story (9:16) — cada grade
+   com um formato só, senão o post herda a altura do story e sobra buraco. */
+.subsecao {
+  margin: clamp(30px, 4vw, 44px) 0 16px;
+  font-family: var(--cond);
+  font-size: clamp(20px, 2.4vw, 26px);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .03em;
+  color: var(--navy);
+}
+.subsecao:first-of-type { margin-top: 0; }
+.subsecao span { margin-left: 8px; font-family: var(--texto); font-size: 14px; font-weight: 500; letter-spacing: 0; text-transform: none; color: var(--txt-fraco); }
 .arte__previa video { display: block; width: 100%; height: 100%; object-fit: cover; background: var(--navy); }
 /* 48px e nao 20: a fonte chega DEPOIS da rolagem do link direto e empurra a pagina ~25px */
 .midia { scroll-margin-top: 48px; }

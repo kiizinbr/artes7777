@@ -44,9 +44,52 @@ const VIDEOS = [
     whats: 'Faltam 3 dias para votar 7777!' },
   { slug: 'faltam-2-dias', titulo: 'Faltam 2 dias', descricao: 'Contagem para o dia 4 de outubro.',
     whats: 'Faltam 2 dias para votar 7777!' },
+  { slug: 'muito-trabalho', titulo: 'Muito trabalho em pouco tempo',
+    descricao: 'Os números de 1 ano e meio de mandato, animados. Sem áudio.',
+    whats: 'Muito trabalho em pouco tempo: os números da Sarah Poncio 7777' },
 ];
 
+/* A ordem aqui é a ordem na página: apresentação primeiro, depois os números. */
 const CARDS = [
+  { slug: 'agora-e-federal', arquivo: 'agora-e-federal.jpg', titulo: 'Agora é Federal!',
+    whats: 'Agora é Federal! Sarah Poncio, Deputada Federal 7777',
+    alt: 'Post: Sarah Poncio sorrindo, de blusa escura, sobre grafismos de coração laranja e navy. ' +
+      'Abaixo, o selo "Agora é Federal!" e a assinatura "Sarah Poncio, Deputada Federal, 7777, ' +
+      'Coragem e Coração".' },
+  { slug: 'quem-e-sarah-poncio', arquivo: 'quem-e-sarah-poncio.png', titulo: 'Quem é Sarah Poncio?',
+    whats: 'Quem é Sarah Poncio? Deputada Federal 7777',
+    alt: 'Post: "Quem é Sarah Poncio?". Ao redor da foto dela, de braços cruzados: autora da Lei do ' +
+      'Spray de defesa da mulher; membro da Comissão de Defesa da Mulher; vice-presidente da ' +
+      'Comissão de Proteção aos Animais; influenciadora digital com mais de 3,5 milhões de ' +
+      'seguidores; autora do selo Empresa Amiga da Mãe Atípica; autora do projeto que autoriza ' +
+      'arma de choque para defesa; combate à pedofilia na internet; criou o projeto Infância ' +
+      'Conectada; autora da lei de apoio às famílias que enfrentam o câncer; líder do ' +
+      'Solidariedade na Alerj. Quer saber mais? Acesse sarahponcio.com.br.' },
+  { slug: 'quem-e-sarah-poncio-story', arquivo: 'quem-e-sarah-poncio-story.png', titulo: 'Quem é Sarah Poncio? (story)',
+    whats: 'Quem é Sarah Poncio? Deputada Federal 7777',
+    alt: 'Story vertical: "Quem é Sarah Poncio?", com as mesmas dez marcas da trajetória ao redor ' +
+      'da foto dela, de braços cruzados, e a assinatura Sarah Poncio, Deputada Federal, 7777.' },
+  { slug: 'muito-trabalho', arquivo: 'muito-trabalho.jpg', titulo: 'Muito trabalho em pouco tempo',
+    whats: 'Muito trabalho em pouco tempo: os números da Sarah Poncio 7777',
+    alt: 'Post: "Muito trabalho em pouco tempo — 1 ano e meio de conquistas!!!". Mais de 40 projetos ' +
+      'de lei apresentados, mais de 25 projetos de resolução, 35 indicações, 4 leis sancionadas e ' +
+      '36 projetos de lei aprovados como autora e coautora. "Agora, a nossa luta segue para ' +
+      'Brasília. Quero representar o Rio de Janeiro no Congresso Nacional."' },
+  { slug: 'chat-me-descreva-1', arquivo: 'chat-1.jpg', titulo: 'Chat, me descreva (1 de 2)',
+    whats: 'Chat, descreva a Sarah Poncio para alguém que ainda não a conhece',
+    alt: 'Post, primeira parte de um carrossel: Sarah Poncio sorrindo na Alerj, de blazer claro. ' +
+      'Uma caixa de chat diz "Chat, descreva para alguém que ainda não me conhece". ' +
+      'Abaixo, "Arraste para o lado".' },
+  { slug: 'chat-me-descreva-2', arquivo: 'chat-2.jpg', titulo: 'Chat, me descreva (2 de 2)',
+    whats: 'Chat, descreva a Sarah Poncio para alguém que ainda não a conhece',
+    alt: 'Post, segunda parte do carrossel, texto sobre fundo navy: "Nasci em Duque de Caxias e, ' +
+      'ainda jovem, me mudei para o Rio de Janeiro. Aos 18 anos, iniciei a faculdade de Medicina, ' +
+      'mas a maternidade mudou os rumos da minha vida. Mãe do José e do João, construí minha ' +
+      'trajetória entre a família, os negócios e, posteriormente, as redes sociais, onde hoje reúno ' +
+      'quase 3,5 milhões de seguidores. Em 2022, disputei minha primeira eleição para deputada ' +
+      'estadual. Hoje, dedico meu mandato à defesa das mulheres, das crianças, das famílias e da ' +
+      'causa animal. Agora, como candidata a deputada federal, sigo acreditando na política como ' +
+      'um instrumento de transformação e no serviço às pessoas como o maior propósito da vida pública."' },
   { slug: '5-curiosidades', arquivo: '5-curiosidades.jpg', titulo: '5 curiosidades sobre mim',
     whats: '5 curiosidades sobre a Sarah Poncio 7777',
     alt: 'Card vertical: 5 curiosidades sobre mim. 01, nascida em Caxias. 02, deputada mais ' +
@@ -114,28 +157,39 @@ ${acoes({ id, titulo: v.titulo, arquivo: rel + '.mp4', nomeDownload: `sarah-ponc
 }).join('\n');
 
 /* --- cards ----------------------------------------------------------------- */
-const blocoCards = (await Promise.all(CARDS.map(async (c) => {
+const cards = await Promise.all(CARDS.map(async (c) => {
   const id = 'card-' + c.slug;
   const de = path.join(FONTE, c.arquivo);
   if (!fs.existsSync(de)) throw new Error('falta ' + de);
-  const jpg = path.join(RAIZ, `${c.slug}-1080x1920.jpg`);
+  // O card guarda a proporção ORIGINAL da arte: post do feed é 4:5 (1080x1350) e
+  // story é 9:16 (1080x1920). Forçar 9:16 em tudo cortaria o topo e o pé dos posts
+  // — justamente onde ficam o título e a assinatura 7777.
+  const { width: w, height: h } = await sharp(de).metadata();
+  const formato = Math.abs(w / h - 9 / 16) < 0.02 ? 'story' : Math.abs(w / h - 4 / 5) < 0.02 ? 'post do feed' : 'imagem';
+  const nome = `${c.slug}-${w}x${h}.jpg`;
+  const jpg = path.join(RAIZ, nome);
   const previa = path.join(RAIZ, `${c.slug}-previa.webp`);
-  // sem .withMetadata(): o EXIF do original NÃO vai junto
-  await sharp(de).resize(1080, 1920, { fit: 'cover' }).jpeg({ quality: 86, mozjpeg: true }).toFile(jpg);
-  await sharp(de).resize(486, 864, { fit: 'cover' }).webp({ quality: 80 }).toFile(previa);
+  const pw = 486, ph = Math.round(486 * h / w);
+  // sem .withMetadata(): o EXIF do original NÃO vai junto. flatten: PNG com alpha vira fundo branco
+  await sharp(de).flatten({ background: '#ffffff' }).jpeg({ quality: 86, mozjpeg: true }).toFile(jpg);
+  await sharp(de).resize(pw, ph).webp({ quality: 80 }).toFile(previa);
   const rel = `assets/midias/${c.slug}`;
-  return `      <li class="arte midia" id="${id}">
-        <a class="arte__previa" href="${rel}-1080x1920.jpg" target="_blank" rel="noopener">
-          <img src="${rel}-previa.webp" width="486" height="864" loading="lazy" decoding="async"
+  return { story: formato === 'story', html: `      <li class="arte midia" id="${id}">
+        <a class="arte__previa" href="assets/midias/${nome}" target="_blank" rel="noopener" style="aspect-ratio: ${w} / ${h}">
+          <img src="${rel}-previa.webp" width="${pw}" height="${ph}" loading="lazy" decoding="async"
                alt="${esc(c.alt)}">
         </a>
         <div class="midia__corpo">
-          <h3 class="midia__titulo">${c.titulo}</h3>
-          <p class="midia__meta">Imagem · 1080 × 1920 · ${kb(fs.statSync(jpg).size)}</p>
-${acoes({ id, titulo: c.titulo, arquivo: rel + '-1080x1920.jpg', nomeDownload: `sarah-poncio-7777-${c.slug}.jpg`, whats: c.whats })}
+          <h4 class="midia__titulo">${c.titulo}</h4>
+          <p class="midia__meta">${formato[0].toUpperCase() + formato.slice(1)} · ${w} × ${h} · ${kb(fs.statSync(jpg).size)}</p>
+${acoes({ id, titulo: c.titulo, arquivo: `assets/midias/${nome}`, nomeDownload: `sarah-poncio-7777-${c.slug}.jpg`, whats: c.whats })}
         </div>
-      </li>`;
-}))).join('\n');
+      </li>` };
+}));
+// Posts (4:5) e stories (9:16) em grades separadas: na mesma grade a linha toma a
+// altura do story e o card do post fica com um buraco branco embaixo.
+const blocoPosts = cards.filter((c) => !c.story).map((c) => c.html).join('\n');
+const blocoStories = cards.filter((c) => c.story).map((c) => c.html).join('\n');
 
 /* --- reescreve os blocos ---------------------------------------------------- */
 // O index.html está em CRLF (Windows): trabalha em LF e devolve no formato que veio
@@ -143,12 +197,13 @@ const bruto = fs.readFileSync('index.html', 'utf8');
 const crlf = bruto.includes('\r\n');
 let html = bruto.split('\r\n').join('\n');
 const troca = (nome, miolo) => {
-  const re = new RegExp(`(<!-- ${nome}:INICIO[\\s\\S]*?-->\\n)[\\s\\S]*?(\\s*<!-- ${nome}:FIM -->)`);
+  const re = new RegExp(`(<!-- ${nome}:INICIO[\\s\\S]*?-->\\n)[\\s\\S]*?\\s*(<!-- ${nome}:FIM -->)`);
   if (!re.test(html)) throw new Error(`index.html sem os marcadores ${nome}:INICIO / ${nome}:FIM`);
-  html = html.replace(re, (_, a, b) => `${a}    <ul class="grade grade--midias">\n${miolo}\n    </ul>${b}`);
+  html = html.replace(re, (_, a, b) => `${a}    <ul class="grade grade--midias">\n${miolo}\n    </ul>\n    ${b}`);
 };
 troca('VIDEOS', blocoVideos);
-troca('CARDS', blocoCards);
+troca('POSTS', blocoPosts);
+troca('STORIES', blocoStories);
 fs.writeFileSync('index.html', crlf ? html.split('\n').join('\r\n') : html);
 
 console.log(`${VIDEOS.length} vídeos e ${CARDS.length} card(s) prontos. Links diretos:`);
